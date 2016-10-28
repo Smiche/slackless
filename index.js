@@ -34,23 +34,23 @@ events.push(new Event('parrot party?', function(msg,callback){
     callback(':dealwithitparrot: :partyparrot: :reversecongaparrot: :sassyparrot: :shuffleparrot: :speedyparrot: :dealwithitparrot: :partyparrot: :reversecongaparrot: :sassyparrot: :shuffleparrot: :speedyparrot: :dealwithitparrot: :partyparrot: :reversecongaparrot: :sassyparrot: :shuffleparrot: :speedyparrot:', 'yes');
 }));
 
-events.push(new Event(('refactoring'), function(msg,callback){
+events.push(new Event('refactoring', function(msg,callback){
     callback('This is not going to end well....');
 }));
 
-events.push(new Event(('lol'), function(msg,callback){
+events.push(new Event('lol', function(msg,callback){
     callback('kek');
 }));
 
-events.push(new Event(('@smiche'), function(msg,callback){
+events.push(new Event('@smiche', function(msg,callback){
     callback('Robots will take over the world.');
 }));
 
-events.push(new Event(('joined #random'), function(msg,callback){
+events.push(new Event('joined #random', function(msg,callback){
     callback('Welcome my dear friend!');
 }));
 
-events.push(new Event(('Hello'), function(msg,callback){
+events.push(new Event('Hello', function(msg,callback){
     callback('Hello, we don\' bite, maybe.');
 }));
 
