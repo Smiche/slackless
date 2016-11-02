@@ -15,11 +15,11 @@ function Event(keyString, action) {
     this.execute = action;
 }
 
-events.push(new Event('weather ', function (msg,callback) {
+events.push(new Event('!weather ', function (msg,callback) {
     console.log(msg);
     var str = '' + msg;
     str = '' + escapeRegExp(str);
-    str = '' + str.substring(str.indexOf('weather ') + 8);
+    str = '' + str.substring(str.indexOf('!weather ') + 9);
     console.log(str);
     getWeather(str, function(weatherString){
         callback(weatherString);
@@ -42,10 +42,6 @@ events.push(new Event('lol', function(msg,callback){
     callback('kek');
 }));
 
-events.push(new Event('@smiche', function(msg,callback){
-    callback('Robots will take over the world.');
-}));
-
 events.push(new Event('joined #random', function(msg,callback){
     callback('Welcome my dear friend!');
 }));
@@ -53,6 +49,20 @@ events.push(new Event('joined #random', function(msg,callback){
 events.push(new Event('Hello', function(msg,callback){
     callback('Hello, we don\' bite, maybe.');
 }));
+
+events.push(new Event('!source', function(msg,callback){
+    callback('https://github.com/Smiche/slackless');
+}));
+
+events.push(new Event('!time', function(msg,callback){
+    callback(''+new Date());
+}));
+
+events.push(new Event('pastebin.com/', function(fullMsg,callback){
+    var id =  fullMsg.substring(fullMsg.indexOf('pastebin.com/')+13,fullMsg.indexOf('pastebin.com/')+ 13 + 8);
+    callback('url without ads: '+ 'http://pastebin.com/raw'+id);
+}));
+
 
 
 var firstTime = true;
